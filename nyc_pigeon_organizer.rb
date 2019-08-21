@@ -7,7 +7,7 @@ def nyc_pigeon_organizer(data)
           if memo[name][key]
           memo[name][key] << type.to_s
           else
-          memo[name][key] = type.to_s
+          memo[name][key] = [type.to_s]
           end
         else
           memo[name] = {key => [type.to_s]}
