@@ -6,6 +6,7 @@ def nyc_pigeon_organizer(data)
       names.each do |name|
         if memo[name]
           if memo[name][key]
+            binding.pry
           memo[name][key] << item[0].to_s
           else
           memo[name][key] = [item[0].to_s]
