@@ -6,6 +6,7 @@ def nyc_pigeon_organizer(data)
         if memo[name]
           if memo[name][key]
           memo[name][key] << type
+          binding.pry
           else
           memo[name][key] = type
           end
