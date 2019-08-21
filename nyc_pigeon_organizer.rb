@@ -1,18 +1,16 @@
 require "pry"
 def nyc_pigeon_organizer(data)
   data = data.reduce({}) do |memo, (key, values)|
-    values.each do |item|
-      names = item[1]
+    values.each do |type, names|
       names.each do |name|
         if memo[name]
           if memo[name][key]
-            binding.pry
-          memo[name][key] << item[0].to_s
+          memo[name][key] << type
           else
-          memo[name][key] = [item[0].to_s]
+          memo[name][key] = type
           end
         else
-          memo[name] = {key => [item[0].to_s]}
+          memo[name] = {key => [type]}
         end
       end
     end
@@ -20,3 +18,27 @@ def nyc_pigeon_organizer(data)
   end
   data
 end
+
+
+#require "pry"
+#def nyc_pigeon_organizer(data)
+  #data = data.reduce({}) do |memo, (key, values)|
+    #values.each do |item|
+      #names = item[1]
+      #names.each do |name|
+        #if memo[name]
+          #if memo[name][key]
+           # binding.pry
+          #memo[name][key] << item[0].to_s
+          #else
+          #memo[name][key] = [item[0].to_s]
+         # end
+        #else
+       #   memo[name] = {key => [item[0].to_s]}
+      #  end
+     # end
+    #end
+   # memo
+  #end
+ # data
+#end
